@@ -24,7 +24,7 @@ public class HeadlineGetter {
                     for (Element header : headers) {
                         Elements headings = header.select("h4.title");
                         for (Element heading : headings) {
-                            h.addHeadline(heading.text());
+                            h.addHeadline(heading.text(), heading.select("a").first().attr("abs:href"));
 
                         }
                     }
