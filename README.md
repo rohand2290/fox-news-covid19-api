@@ -1,5 +1,5 @@
 # fox-news-covid19-api
-REST API which returns Fox News Headlines
+> REST API which returns Fox News Headlines
 
 
 ## Usage
