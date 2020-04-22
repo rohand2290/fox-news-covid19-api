@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class HeadlineList {
 
-    private ArrayList<String> headlines = new ArrayList<String>();
+    private ArrayList<Headline> headlines = new ArrayList<Headline>();
 
-    public ArrayList<String> getHeadlines() {
+    public ArrayList<Headline> getHeadlines() {
         return headlines;
     }
 
-    public void setHeadlines(ArrayList<String> headlines) {
+    public void setHeadlines(ArrayList<Headline> headlines) {
         this.headlines = headlines;
     }
 
-    public void addHeadline(String headline) {
-        headlines.add(headline);
+    public void addHeadline(String headline, String url, String imageUrl) {
+        headlines.add(new Headline(headline, url, imageUrl));
     }
 }

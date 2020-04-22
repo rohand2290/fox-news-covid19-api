@@ -11,20 +11,21 @@ public class HeadlineGetter {
     public HeadlineList getHeadlineList() throws IOException {
         HeadlineList h = new HeadlineList();
         String url = "https://www.foxnews.com/category/health/infectious-disease/coronavirus";
+        String imgUrl = "";
         Document doc = Jsoup.connect(url).get();
         Elements articleContent = doc.select("div.article-list");
 
         for (Element articleElem: articleContent) {
             Elements articles = articleElem.select("article.article");
-
             for (Element articleMain : articles) {
                 Elements divInfo = articleMain.select("div.info");
+                imgUrl = articleMain.select("div.m").first().select("a").first().select("img").first().attr("src");
                 for (Element div : divInfo) {
                     Elements headers = div.select("header.info-header");
                     for (Element header : headers) {
                         Elements headings = header.select("h4.title");
                         for (Element heading : headings) {
-                            h.addHeadline(heading.text());
+                            h.addHeadline(heading.text(), heading.select("a").first().attr("abs:href"), imgUrl);
 
                         }
                     }
