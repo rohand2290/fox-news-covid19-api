@@ -14,7 +14,7 @@ public class HeadlineList {
         this.headlines = headlines;
     }
 
-    public void addHeadline(String headline, String url) {
-        headlines.add(new Headline(headline, url));
+    public void addHeadline(String headline, String url, String imageUrl) {
+        headlines.add(new Headline(headline, url, imageUrl));
     }
 }

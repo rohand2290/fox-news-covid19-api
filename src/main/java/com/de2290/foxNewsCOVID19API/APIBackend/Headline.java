@@ -4,6 +4,7 @@ public class Headline {
 
     private String headline = "";
     private String link = "";
+    private String imgUrl = "";
 
     public String getLink() {
         return link;
@@ -11,6 +12,14 @@ public class Headline {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getHeadline() {
@@ -21,8 +30,10 @@ public class Headline {
         this.headline = headline;
     }
 
-    public Headline(String headline, String link) {
+
+    public Headline(String headline, String link, String imgUrl) {
         this.headline = headline;
         this.link = link;
+        this.imgUrl = imgUrl;
     }
 }
